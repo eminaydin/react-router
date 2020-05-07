@@ -18,3 +18,21 @@
 h2 {
   margin-top: 20px;
 }
+.modal-menu {
+  height: 100vh;
+  background-color: brown;
+  overflow: hidden;
+  list-style-type: none;
+  font-size: 30px;
+}
+li {
+  color: white;
+  text-align: center;
+}
+.close {
+  float: right;
+}
+
+.close:hover {
+  cursor: pointer;
+}

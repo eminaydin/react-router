@@ -1,34 +1,57 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
-
-
     const [isOpen, setIsOpen] = useState(true);
+
     function clickHandler() {
+        setIsOpen(false)
+    }
+    function handleClose() {
         setIsOpen(true)
     }
+
     return (
         <div>
+            {isOpen ?
+                (
+                    <div className="navbar">
+                        <Link to="/">
+                            <span className="logo">Logo</span>
+                        </Link>
 
-            <>
-                <div className="navbar">
-                    <span className="logo">Logo</span>
-                    <span className="hamburger"
-                        onClick={clickHandler}>Menu</span>
-                    <Link to="/about">
-                        <li>About</li>
-                    </Link>
-                    <Link to="/projects">
-                        <li>Projects</li>
-                    </Link>
-                    <Link to="/" exact>
-                        <li>Home</li>
-                    </Link>
+                        <span className="hamburger"
+                            onClick={clickHandler}>Menu</span>
+                    </div>
 
-                </div>
-                <h2>Home</h2>
-            </>
+                )
+                :
+                (
+
+                    <div className="modal-menu">
+                        <p onClick={handleClose} className="close"> close</p>
+                        <NavLink to="/about" activeClassName="selected" activeStyle={{
+                            fontWeight: "bold",
+                            color: "red"
+                        }}>
+                            <li onClick={handleClose}>About</li>
+                        </NavLink>
+                        <NavLink to="/projects" activeClassName="selected" activeStyle={{
+                            fontWeight: "bold",
+                            color: "red"
+                        }}>
+                            <li onClick={handleClose}>Projects</li>
+                        </NavLink>
+                        <NavLink to="/" exact activeClassName="selected" activeStyle={{
+                            fontWeight: "bold",
+                            color: "red"
+                        }}>
+                            <li onClick={handleClose}>Home</li>
+                        </NavLink>
+                    </div>
+
+                )}
+
 
 
         </div >
