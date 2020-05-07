@@ -5,76 +5,34 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Projects from "./Projects"
+import About from "./About"
+import Nav from "./Nav"
 import "./App.css"
 
 export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Nav />
         <Switch>
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/Projects">
+            <Projects />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/" exact>
           </Route>
         </Switch>
       </div>
     </Router>
   );
+
 }
 
-function Home() {
-  const [isOpen, setIsOpen] = useState(true);
-  function clickHandler() {
-    setIsOpen(true)
-  }
 
 
-  return (
-    <div>
-      {isOpen ?
-        (
-          <><div className="navbar">
-            <span className="logo">Logo</span>
-            <span className="hamburger"
-              onClick={clickHandler}>Menu</span>
-          </div>
-            <h2>Home</h2>
-          </>
-        )
-        :
-        (
-          null
-        )}
 
-    </div >
-  )
-}
 
-function About() {
-  return <h2>About</h2>;
-}
 
-function Users() {
-  return <h2>Users</h2>;
-}
