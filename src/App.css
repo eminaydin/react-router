@@ -1,38 +1,15 @@
 .hamburger {
-  display: block;
   float: right;
-  margin-right: 20px;
 }
-.hamburger:hover {
-  cursor: pointer;
-}
-.navbar {
-  display: block;
-}
-.logo {
-  margin-left: 20px;
-}
-.logo:hover {
-  cursor: pointer;
-}
-h2 {
-  margin-top: 20px;
-}
-.modal-menu {
-  height: 100vh;
-  background-color: brown;
-  overflow: hidden;
-  list-style-type: none;
-  font-size: 30px;
-}
-li {
-  color: white;
-  text-align: center;
-}
-.close {
-  float: right;
+.home {
 }
 
-.close:hover {
-  cursor: pointer;
+li {
+  color: black;
+  text-align: center;
+  list-style: none;
+  font-size: 30px;
+}
+#root {
+  margin: 20px;
 }
