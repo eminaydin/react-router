@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import "./App.css"
 
 export default function App() {
   return (
@@ -43,7 +44,31 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  const [isOpen, setIsOpen] = useState(true);
+  function clickHandler() {
+    setIsOpen(true)
+  }
+
+
+  return (
+    <div>
+      {isOpen ?
+        (
+          <><div className="navbar">
+            <span className="logo">Logo</span>
+            <span className="hamburger"
+              onClick={clickHandler}>Menu</span>
+          </div>
+            <h2>Home</h2>
+          </>
+        )
+        :
+        (
+          null
+        )}
+
+    </div >
+  )
 }
 
 function About() {
