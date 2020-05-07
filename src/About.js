@@ -1,5 +1,6 @@
-import React from 'react'
-import { Feed, Container } from 'semantic-ui-react'
+import React from 'react';
+import { Feed } from 'semantic-ui-react';
+import { Helmet } from "react-helmet";
 
 const events = [
     {
@@ -76,5 +77,14 @@ const events = [
     },
 ]
 
-const About = () => <Feed events={events} />
-export default About
+const About = () => {
+
+    return (<div>
+        <Helmet>
+            <title>About</title>
+        </Helmet>
+        <Feed events={events} />
+    </div>
+    )
+}
+export default About 
