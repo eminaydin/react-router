@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { Button, Modal } from 'semantic-ui-react'
 
+
 const Nav = () => {
     const [open, setOpen] = useState(false);
     const show = () => { setOpen(true) }
@@ -10,6 +11,7 @@ const Nav = () => {
 
     return (
         <div>
+
             <div className="navbar">
                 <Link to="/">
                     <Button icon="home" className="home"></Button>
